@@ -66,15 +66,18 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
   .theme-grid{grid-template-columns:1fr}
   .theme-name{font-size:14px}
   .theme-func{font-size:13px;}
-  .demo-grid{grid-template-columns:1fr; gap:16px}
+  .demo-grid{grid-template-columns:1fr; gap:20px}
+  .bars{height:160px; gap:10px}
+  .bar-fill{width:40px; max-width:80%; border-radius:8px 8px 0 0}
   .cta-grid{grid-template-columns:1fr}
   .disc-grid{grid-template-columns:1fr}
-  .borda-row{flex-wrap:nowrap; gap:8px}
-  .b-rank{width:18px; font-size:12px}
-  .b-name{flex:0 0 35%; width:auto; min-width:0; font-size:12px; line-height:1.2; word-break:break-word}
-  .b-bar-w{flex:1; width:auto; min-width:0; margin-left:0}
-  .b-bar{height:24px; border-radius:4px}
-  .b-score{font-size:14px; min-width:30px}
+  .borda-list{gap:8px}
+  .borda-row{flex-wrap:wrap; gap:4px; margin-bottom:16px}
+  .b-rank{width:20px; font-size:13px; font-weight:700}
+  .b-name{flex:1; width:auto; font-size:14px; font-weight:600; line-height:1.3; white-space:normal}
+  .b-bar-w{flex:0 0 100%; display:block; position:relative; padding-right:38px; margin-left:0; height:18px; margin-top:4px}
+  .b-bar{height:18px; border-radius:9px}
+  .b-score{position:absolute; right:0; top:50%; transform:translateY(-50%); font-size:14px; min-width:unset}
   .conclusion-box{padding:20px 16px; margin-top:20px}
   .conclusion-box p{font-size:15px}
   .nav-dock{bottom:0; width:100%; border-radius:24px 24px 0 0; padding:12px 24px; padding-bottom:calc(12px + env(safe-area-inset-bottom)); justify-content:space-between; border-bottom:none; border-left:none; border-right:none; background:rgba(5,5,10,0.85); box-shadow:0 -10px 40px rgba(0,0,0,0.5)}
