@@ -23,7 +23,7 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
 .nav-counter .cur{color:#fff;font-weight:700;font-size:16px}
 .nav-counter .sep{color:var(--dim);opacity:0.6}
 .sec-num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);letter-spacing:2px;margin-bottom:12px}
-.sec-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,58px);font-weight:400;line-height:1.12;margin-bottom:20px;word-break:break-word}.sec-title em{font-style:italic;color:var(--accent2)}
+.sec-title{font-size:clamp(36px,4vw,52px);font-weight:800;line-height:1.15;margin-bottom:20px;word-break:break-word;letter-spacing:-0.02em}h1.sec-title{font-size:clamp(40px,5vw,60px);}.sec-title em{font-style:italic;color:var(--accent2)}
 .sec-desc{font-size:18px;color:var(--muted);line-height:1.65;max-width:640px}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(59,130,246,.10) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 80% 30%,rgba(244,63,94,.06) 0%,transparent 70%)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at center,black,transparent)}
@@ -106,3 +106,4 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
 @media (max-width: 480px){
   .demo-grid{grid-template-columns:1fr}
 }
+
