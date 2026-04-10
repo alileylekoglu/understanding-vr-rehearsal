@@ -206,19 +206,30 @@ function playSlide(slide){
   playCta(slide);
 }
 
-const slideObs=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    const slide=entry.target;
-    if(entry.isIntersecting&&entry.intersectionRatio>=0.55){
-      const i=slides.indexOf(slide);
-      if(i!==-1)setActive(i);
+const activeObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !busy) {
+      const i = slides.indexOf(entry.target);
+      if (i !== -1) setActive(i);
+    }
+  });
+}, { rootMargin: "-50% 0px -49% 0px" });
+
+const slideObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const slide = entry.target;
+    if (entry.isIntersecting) {
       playSlide(slide);
-    }else if(!entry.isIntersecting||entry.intersectionRatio<0.2){
+    } else {
       resetSlide(slide);
     }
   });
-},{threshold:[0.2,0.55,0.85]});
-slides.forEach(s=>slideObs.observe(s));
+}, { threshold: 0, rootMargin: "-10% 0px -10% 0px" });
+
+slides.forEach(s => {
+  activeObs.observe(s);
+  slideObs.observe(s);
+});
 
 slides.forEach(resetSlide);
 setActive(0);
