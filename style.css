@@ -1,4 +1,4 @@
-:root{--bg:#05050A;--text:#FAFAFA;--muted:#A1A1AA;--dim:#52525B;--accent:#3B82F6;--accent2:#8B5CF6;--warm:#F43F5E;--teal:#14B8A6;--gold:#F59E0B;--purple:#A855F7;--card:rgba(255,255,255,0.03);--glass:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.08)}
+:root{--bg:#05050A;--text:#FAFAFA;--muted:#A1A1AA;--dim:#52525B;--accent:#3B82F6;--accent2:#3B82F6;--warm:#60A5FA;--teal:#14B8A6;--gold:#F59E0B;--purple:#3B82F6;--card:rgba(255,255,255,0.03);--glass:rgba(255,255,255,0.05);--border:rgba(255,255,255,0.08)}
 @import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700;900&display=swap');
 html{scroll-behavior:initial}
 html.lenis, html.lenis body {height: auto;}
@@ -106,6 +106,7 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
 @media (max-width: 480px){
   .demo-grid{grid-template-columns:1fr}
 }
+
 
 
 
