@@ -9,8 +9,19 @@
 </head>
 <body>
 <div class="progress" id="prog"></div>
-<nav class="nav-dots" id="navDots"></nav>
-<div class="counter"><span class="key" onclick="go(active-1)" title="Previous Slide">←</span><span><span class="cur" id="cur">1</span> / <span id="tot">12</span></span><span class="key" onclick="go(active+1)" title="Next Slide">→</span></div>
+<div class="nav-dock">
+  <button class="nav-btn" onclick="go(active-1)" title="Previous Slide" aria-label="Previous Slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="nav-counter">
+    <span class="cur" id="cur">1</span>
+    <span class="sep">/</span>
+    <span class="tot" id="tot">12</span>
+  </div>
+  <button class="nav-btn" onclick="go(active+1)" title="Next Slide" aria-label="Next Slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
 
 <section class="slide" id="s1"><div class="hero-bg"></div><div class="hero-grid"></div><div class="container" style="position:relative;z-index:1"><div class="sec-num reveal">CHI EA '26 · BARCELONA</div><h1 class="sec-title reveal d1">Understanding Amateur Actors' VR Rehearsal Needs:<br>Priorities and Rationales</h1><div class="author-grid reveal d2"><div class="author-card"><div class="author-name">Ali Leylekoğlu</div><div class="author-dept">Design, Technology and Society</div><div class="author-affil">Özyeğin University, Türkiye</div><div class="author-email">ali.leylekoglu@ozu.edu.tr</div></div><div class="author-card"><div class="author-name">Gökçe Elif Baykal</div><div class="author-dept">Communication and Design</div><div class="author-affil">Özyeğin University, Türkiye</div><div class="author-email">elif.baykal@ozyegin.edu.tr</div></div></div></div></section>
 
@@ -49,9 +60,6 @@ const curEl=document.getElementById('cur'),totEl=document.getElementById('tot');
 totEl.textContent=total;
 
 let active=0,busy=false;
-const dotsC=document.getElementById('navDots');
-slides.forEach((_,i)=>{const d=document.createElement('button');d.className='nav-dot';d.onclick=()=>go(i);dotsC.appendChild(d)});
-const dots=[...document.querySelectorAll('.nav-dot')];
 
 const slideTimers=new WeakMap();
 function rememberTimer(slide,id,kind){
@@ -67,7 +75,6 @@ function clearTimers(slide){
 function setActive(i){
   active=i;
   curEl.textContent=i+1;
-  dots.forEach((d,j)=>d.classList.toggle('active',j===i));
   slides.forEach((s,j)=>s.classList.toggle('is-current',j===i));
 }
 
