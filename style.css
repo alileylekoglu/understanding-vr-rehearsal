@@ -44,6 +44,8 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
 .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
 .thank-you-grid{display:flex;gap:48px;justify-content:center;margin-top:28px}
 .logos-grid{margin-top:32px;display:flex;justify-content:center;gap:40px;align-items:flex-start;flex-wrap:wrap}
+.logos-flex{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap}
+.logo-img{height:60px;width:auto;max-width:200px;object-fit:contain}
 
 .method-badge{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:16px}.method-badge .mbdot{width:10px;height:10px;border-radius:50%}
 .method-heading{font-size:clamp(20px,2vw,24px);font-weight:700;line-height:1.2;margin-bottom:8px;word-break:break-word}
