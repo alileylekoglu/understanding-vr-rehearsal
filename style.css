@@ -57,33 +57,26 @@ body{font-family:'Satoshi',sans-serif;background:var(--bg);color:var(--text);ove
 .rq-line{font-size:15px;line-height:1.6;color:var(--text)}
 
 /* Long-form copy wipe reveal during slide transitions */
-#s2 .intro-panel.reveal p,
-#s3 .intro-panel.reveal p,
-#s5 .intro-panel.reveal p,
-#s10 .disc-card.reveal p{
-  position:relative;
-  overflow:hidden;
-}
-#s2 .intro-panel.reveal p::after,
-#s3 .intro-panel.reveal p::after,
-#s5 .intro-panel.reveal p::after,
-#s10 .disc-card.reveal p::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 72%,transparent 100%);
-  transform:translateX(-2%);
-  transition:transform 1.05s cubic-bezier(.22,1,.36,1);
-  pointer-events:none;
-}
-#s2 .intro-panel.reveal.visible p::after,
-#s3 .intro-panel.reveal.visible p::after,
-#s5 .intro-panel.reveal.visible p::after,
-#s10 .disc-card.reveal.visible p::after{
-  transform:translateX(104%);
-}
+  #s2 .intro-panel.reveal p,
+  #s3 .intro-panel.reveal p,
+  #s5 .intro-panel.reveal p,
+  #s10 .disc-card.reveal p{
+    color: transparent;
+    background-image: linear-gradient(90deg, var(--text) 0%, var(--text) 45%, color-mix(in srgb, var(--text) 50%, transparent) 55%, color-mix(in srgb, var(--text) 50%, transparent) 100%);
+    background-size: 230% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 1.2s cubic-bezier(.22,1,.36,1);
+  }
+  #s2 .intro-panel.reveal.visible p,
+  #s3 .intro-panel.reveal.visible p,
+  #s5 .intro-panel.reveal.visible p,
+  #s10 .disc-card.reveal.visible p{
+    background-position: 0% 0;
+  }
 
-.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+  .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
 .thank-you-grid{display:flex;gap:48px;justify-content:center;margin-top:28px}
 .logos-grid{margin-top:32px;display:flex;justify-content:center;gap:40px;align-items:flex-start;flex-wrap:wrap}
 .logos-flex{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap}
